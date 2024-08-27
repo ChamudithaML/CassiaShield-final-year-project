@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Classify Cinnamon
+{% endblock %}
+
+
+{% block content %}
+
+<script>
+    function readURL(input) {
+        for (var i = 0; i < input.files.length; i++) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var img = new Image();
+                img.src = e.target.result;
+                img.onload = function() {
+                    var canvas = document.createElement('canvas');
+                    var ctx = canvas.getContext('2d');
+                    // Define maximum width and height for the preview
+                    var maxWidth = 300; // Adjust this value as needed
+                    var maxHeight = 300; // Adjust this value as needed
+                    var width = img.width;
+                    var height = img.height;
+
+                    // Resize the image if necessary
+                    if (width > maxWidth || height > maxHeight) {
+                        var ratio = Math.min(maxWidth / width, maxHeight / height);
+                        width *= ratio;
+                        height *= ratio;
+                    }
+
+                    // Set canvas dimensions and draw the resized image
+                    canvas.width = width;
+                    canvas.height = height;
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    // Set the resized image as the source for the preview
+                    $('#imagePreview').attr('src', canvas.toDataURL('image/jpeg'));
+                };
+            };
+            reader.readAsDataURL(input.files[i]);
+            $('#uploadLabel').text('File name: ' + input.files[i].name);
+        }
+    }
+</script>
+
+
+</head>
+
+<div class="container-fluid py-5">
+    <div class="row py-4">
+        <div class="text-center">
+            <h1 class="display-4">CassiaShield Image Upload</h1>
+            <p class="mb-3">Click on Upload file to Classify Disease</p>
+
+            <div class="imageContainer mt-4">
+                <img alt="" class="img-fluid rounded shadow-sm mx-auto d-block" id="imagePreview" src="#">
+            </div>
+
+            
+
+        </div>
+    </div>
+
+    <div class="row mx-auto">
+        <form action="{{ url_for('disease_image') }}" enctype="multipart/form-data" id="upload-form" method="POST">
+            <div class="col-6 input-group mb-3 px-2 py-2 rounded-pill bg-light shadow-sm">
+                <!-- <input style="margin-left: 20px;" type="file" name="file" accept="image/*" multiple> -->
+                <input class="form-control border-0" id="upload" onchange="readURL(this);" type="file" name="file" accept="image/*">
+
+                <label class="font-weight-light text-muted" for="upload" id="uploadLabel">Upload File</label>
+                <div class="input-group-append">
+                    <label class="btn btn-light m-0 rounded-pill px-4" for="upload">
+                        <i class="fa fa-cloud-upload mr-2 text-muted"></i>
+                        <small class="text-uppercase font-weight-bold text-muted">Upload file</small>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 ld-grid gap-2 d-flex justify-content-between align-items-center">
+                    
+                    <input class="btn btn-primary btn-lg px-5 py-5 m-2 mx-auto" type="submit" value="Predict">
+
+                </div>
+            </div>
+        </form>   
+    </div>
+</div>
+
+{% endblock %}
