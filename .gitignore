@@ -1,3 +1,14 @@
-# Ignore all files in the "folder" folder
+# Ignore all files in the folder
 .idea/
 
+# Ignore specific folders in the "cinback" folder
+cinback/.ipynb_checkpoints/
+cinback/__pycache__/
+cinback/images/
+
+# Ignore everything in the "models" folder except "CinaMiNet2.h5"
+cinback/models/*
+!cinback/models/CinaMiNet2.h5
+
+# Ignore real time capture image
+cinback/1.png
