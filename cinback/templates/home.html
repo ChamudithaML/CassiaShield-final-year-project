@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <section class="hero">
+        <div class="px-4 py-5 text-center d-flex justify-content-center align-items-center"
+             style="background: url('../static/cover.jpg') no-repeat bottom center / cover;
+            height: 70vh;">
+            <div class="col-lg-6 mx-auto">
+
+                <h1 class="fw-bold text-light head-update">CassiaShield</h1>
+
+                <p class="lead mb-4 font-weight-bold text-white bg-dark" style="font-size: 30px;">Inovative Agriculture</p>
+
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                       
+                    <a class="btn btn-primary btn-lg px-5 gap-3" href="{{ url_for('classify_disease1') }}">Find Disease</a>
+                    <a class="btn btn-primary btn-lg px-5 gap-3" href="{{ url_for('disease_in_real') }}">Scan Disease</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-about pt-5 pb-5" id="sec-about">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-10 col-lg-8">
+                    <h1 class="h4">About CassiaShield</h1>
+                    <p class="mt-4 mb-4">මෙම application එක මගින් කුරුඳු වගේවේ ඇතිවන රෝග සොයා ගැනීම සහ 
+                        එම රෝග වලක්වා ගන්නා ක්‍රම, ප්‍රතිකාර ක්‍රම ලබාදී ඇත. කුරුඳු වගාව ශ්‍රී ලංකාවේ 
+                        ඉතා ඉහලින් පවතින අපනයන බෝගයක් වන අතර වගාවේ ප්‍රමිතිය වැඩි කිරීම සහ 
+                        වැඩි පලදාවක් ලබාගැනීමට උපකාර වීම මෙම applicationයේ අරමුණ වී ඇත. </p>
+                        
+                        <p class="mt-4 mb-4">Whether you're a seasoned farmer or just starting out, our app provides the tools and resources 
+                            you need to ensure the success of your cinnamon plantation. Download now and experience 
+                            the future of cinnamon farming!</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="sec-team pb-3" id="sec-team">
+        <div class="container">
+            <h1 class="h4 mb-5 text-center">Cinnamon Leaf Diseases</h1>
+
+            <div class="row">
+                <!--                <div class="col-md-3">-->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+                    <div class="card" style="height: 380px;">
+                        <img alt="..." class="card-img-top" src="../static/homeimages/1.jpg"
+                             style="height: 240px; object-fit: cover;">
+                        <div class="card-body">                        
+                            <h6 class="card-title">Mite affection</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+                    <div class="card" style="height: 380px;">
+                        <img alt="..." class="card-img-top" src="../static/homeimages/2.jpg"
+                             style="height: 240px; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">Leaf Chlorosis</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+                    <div class="card" style="height: 380px;">
+                        <img alt="..." class="card-img-top" src="../static/homeimages/3.jpg"
+                             style="height: 240px; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">Leaf Spot</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+                    <div class="card" style="height: 380px;">
+                        <img alt="..." class="card-img-top" src="../static/homeimages/4.png"
+                             style="height: 240px; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title">More Diseases</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-features pt-5 pb-5 mt-2" id="sec-features">
+        <div class="container">
+
+            <h1 class="h4 mb-5 text-center">Cinnamon Products</h1>
+            <br>
+            <br>
+            <!-- Next Content -->            
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center">
+                    <img alt="..."
+                         height="190"
+                         width="190"
+                         src="../static/cinnamon_Images/1.jpg" width="150">
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="h4">Cinnamon Oil</h3>
+
+                    <hr/>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni a dolor libero sequi
+                        voluptates et numquam nulla eos. Adipisci distinctio culpa dolores quae repellat dolore
+                        nesciunt, repellendus fugiat delectus. Consequuntur.</p>
+                </div>
+            </div>
+
+            <!-- Next Content -->
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center">
+                    <img alt="..."
+                         height="190"
+                         width="190"
+                         src="../static/cinnamon_Images/15.jpg" width="150">
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="h4">Cinnamon Powder</h3>
+
+                    <hr/>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni a dolor libero sequi
+                        voluptates et numquam nulla eos. Adipisci distinctio culpa dolores quae repellat dolore
+                        nesciunt, repellendus fugiat delectus. Consequuntur.</p>
+                </div>
+            </div>
+
+            <!-- Next Content -->            
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center">
+                    <img alt="..."
+                         height="190"
+                         width="190"
+                         src="../static/cinnamon_Images/19.jpg" width="150">
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="h4">Cinnamon Exports</h3>
+
+                    <hr/>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni a dolor libero sequi
+                        voluptates et numquam nulla eos. Adipisci distinctio culpa dolores quae repellat dolore
+                        nesciunt, repellendus fugiat delectus. Consequuntur.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+</div>
+{% endblock %}

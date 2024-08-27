@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Prediction
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid py-5">
+    <div class="row">
+        <div class="text-center">
+            <h1 class="display-4">Your Selected Image</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 ld-grid gap-2 d-flex flex-column justify-content-center align-items-center">
+            <img src=" {{url_for('get_cinnamon_img', filename=image_name)}}" style="width:300px;height:300px;">
+            <p class="text-center text-danger fw-bold"> {{text}} </p>
+            <br>
+            <p class="text-center text-danger fw-bold"> ප්‍රතිකාර හා වැළැක්වීමේ ක්‍රම</p>
+
+            <div style="width: 50%; margin: 0 auto;">
+                <p class="text-center text-danger fw-bold"> {{treat}} </p>
+            </div>
+
+            <!-- <p class="text-center text-danger fw-bold"> {{treat}} </p> -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 ld-grid d-flex flex-column justify-content-center align-items-center">
+            <a class="btn btn-primary btn-lg px-5 gap-3" href="/disease1" role="button">Predict Another image</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

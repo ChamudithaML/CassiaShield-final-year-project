@@ -1,6 +1,10 @@
 # Ignore all files in the folder
 .idea/
 
+# Igonore images used in the web app
+cinback/static/*
+!cinback/static/style.css
+
 # Ignore specific folders in the "cinback" folder
 cinback/.ipynb_checkpoints/
 cinback/__pycache__/
